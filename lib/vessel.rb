@@ -4,15 +4,15 @@ class Vessel
   def initialize(name = 'FAKE', volume = 100)
     @name = name
     @volume = volume
-    @empty = true
+    @current_water_volume = 0
   end
 
   def fill
-    @empty = false
+    @current_water_volume = @volume
   end
 
   def empty?
-    @empty
+    @current_water_volume == 0
   end
 
 end
