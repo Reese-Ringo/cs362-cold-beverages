@@ -8,11 +8,12 @@ describe 'A water dispenser' do
         expect(reservoir).to eq(dispenser.reservoir)
     end
 
-    it 'can drain a reservoir' do
+    it 'can drain a reservoir, filling a vessel' do
         reservoir = WaterReservoir.new(10, 10) # Initialize as full
         dispenser = WaterDispenser.new(reservoir)
         vessel = Vessel.new('Bottle', 2)
         dispenser.dispense(vessel)
         expect(reservoir.current_water_volume).to eq(8)
+        expect(vessel.current_water_volume).to eq(2)
     end
 end

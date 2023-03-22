@@ -45,5 +45,4 @@ describe 'A freezer' do
         expect(freezer.temperature).to eq(60)
     end
 
-
 end

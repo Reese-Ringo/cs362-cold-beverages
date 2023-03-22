@@ -1,5 +1,5 @@
 class Vessel
-  attr_reader :name, :volume
+  attr_reader :name, :volume, :current_water_volume
 
   def initialize(name = 'FAKE', volume = 100)
     @name = name
@@ -7,8 +7,8 @@ class Vessel
     @current_water_volume = 0
   end
 
-  def fill
-    @current_water_volume = @volume
+  def fill(amount)
+    @current_water_volume += amount
   end
 
   def empty?
